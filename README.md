@@ -2,7 +2,7 @@
 
 
 
-## What this page provides
+## What this page provides.
 
 ### This page generates secure passwords for you.
 ### It's perfect if you need reliable password 
