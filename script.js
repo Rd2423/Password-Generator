@@ -7,10 +7,10 @@ character = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/
 
 
 var enter; 
-var confirmNumber;
-var confirmCharacter;
-var confirmUppercase;
-var confirmLowercase;
+var number;
+var specialCharacter;
+var upperCase;
+var lowerCase;
 
 space = [];
 
@@ -25,8 +25,8 @@ letters2 = letters.map(toUpper);
 var get = document.querySelector("#generate");
 
 get.addEventListener("click", function() {
-    ps = writePassword();
-    document.getElementById("password").placeholder = ps;
+    pwd = writePassword();
+    document.getElementById("password").placeholder = pwd;
 });
 
 
@@ -42,65 +42,65 @@ function writePassword() {
   
     } else {
       
-      confirmNumber = confirm("You want numbers in your password?");
-      confirmCharacter = confirm("You want special characters?");
-      confirmUppercase = confirm("You need Uppercase letters?");
-      confirmLowercase = confirm("You ned Lowercase letters?");
+      number = confirm("You want numbers in your password?");
+      specialCharacter = confirm("You want special characters?");
+      upperCase = confirm("You need Uppercase letters?");
+      lowerCase = confirm("You ned Lowercase letters?");
 
     };
   
-  if (!confirmCharacter && !confirmNumber && !confirmUppercase && !confirmLowercase) {
+  if (!specialCharacter && !number && !upperCase && !lowerCase) {
       choices = alert("You need to choose at least ONE ! ");
   }
  
-  else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  else if (specialCharacter && number && upperCase && lowerCase) {
       choices = character.concat(number, letters, letters2);
   }
   
-  else if (confirmCharacter && confirmNumber && confirmUppercase ) {
+  else if (specialCharacter && number && upperCase ) {
       choices = character.concat(number, letters2);
   }
-  else if (confirmCharacter && confirmNumber && confirmLowercase) {
+  else if (specialCharacter && number && lowerCase) {
       choices = character.concat(number, letters);
   }
-  else if (confirmCharacter && confirmNumber && confirmUppercase) {
+  else if (specialCharacter && number && upperCase) {
       choices = character.concat(letters, letters2);
   }
-  else if (confirmNumber && confirmLowercase && confirmUppercase) {
+  else if (number && lowerCase && upperCase) {
       choices = number.concat(letters, letters2);
   }
 
   
-else if (confirmCharacter && confirmNumber) {
+else if (specialCharacter && number) {
     choices = character.concat(number);
 
-} else if (confirmCharacter && confirmLowercase) {
+} else if (specialCharacter && lowerCase) {
     choices = character.concat(letters);
 
-} else if (confirmCharacter && confirmUppercase) {
+} else if (specialCharacter && upperCase) {
     choices = character.concat(letters2);
 }
-else if (confirmLowercase && confirmNumber) {
+else if (lowerCase && number) {
     choices = letters.concat(number);
 
-} else if (confirmLowercase && confirmUppercase) {
+} else if (lowerCase && upperCase) {
     choices = letters.concat(letters2);
 
-} else if (confirmNumber && confirmUppercase) {
+} else if (number && upperCase) {
     choices = number.concat(letters2);
 }
 
-else if (confirmCharacter) {
+else if (specialCharacter) {
     choices = character;
 }
-else if (confirmNumber) {
+else if (number) {
     choices = number;
 }
-else if (confirmLowercase) {
+else if (lowerCase) {
     choices = letters;
 }
 
-else if (confirmUppercase) {
+else if (upperCase) {
     choices = space.concat(letters2)
 }
 
@@ -113,12 +113,12 @@ for (var i = 0; i < enter; i++) {
     password.push(pickChoices);
 }
 
-var ps = password.join('')
-UserInput(ps);
-return ps;
+var pwd = password.join('')
+UserInput(pwd);
+return pwd;
 }
 
 
-function UserInput(ps) {
-    document.getElementById("password").textContent = ps;
+function UserInput(pwd) {
+    document.getElementById("password").textContent = pwd;
 }
