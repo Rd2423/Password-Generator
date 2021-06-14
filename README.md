@@ -5,7 +5,7 @@
 ## What this page provides
 
 ### This page generates secure passwords for you.
-### It's perfect if you want need reliable password 
+### It's perfect if you need reliable password 
 ### These password are perfect if you don't want hackers to crack your password and have access to your files.
 
 
