@@ -1,4 +1,4 @@
-# Password-Generator
+# Awesome-Password-Generator
 
 
 
